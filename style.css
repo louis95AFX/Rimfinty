@@ -1,0 +1,345 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --color-black: #0A0A0A;
+    --color-gold: #C5A352; /* Brushed Deep Gold */
+    --color-silver: #B0B0B0; /* Polished Silver/Chrome */
+    --color-white: #FFFFFF;
+    --color-dark-surface: #141414; /* Slightly lighter black for surfaces */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-black);
+    color: var(--color-silver);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll from gallery */
+}
+
+/* --- Typography --- */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    /* EDIT: Increased letter-spacing for premium feel */
+    letter-spacing: 3px; 
+    font-weight: 700;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2rem; color: var(--color-silver); }
+
+.gold-text { color: var(--color-gold); }
+.silver-text { color: var(--color-silver); }
+
+/* --- Buttons & CTAs --- */
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    margin-top: 2rem;
+    background-color: transparent;
+    border: 2px solid var(--color-gold);
+    color: var(--color-gold);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    /* EDIT: Added text-shadow for metallic sheen */
+    text-shadow: 0 0 5px rgba(197, 163, 82, 0.5); 
+    transition: background-color var(--transition-speed), color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed), text-shadow var(--transition-speed);
+}
+
+.cta-button:hover {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(197, 163, 82, 0.6); /* Slightly stronger glow */
+    text-shadow: none; /* Remove text shadow when background is gold */
+}
+
+.gold-outline {
+    border-color: var(--color-gold);
+}
+
+/* --- Header --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    /* EDIT: Made background slightly more opaque and added subtle shadow */
+    background: rgba(10, 10, 10, 0.95); 
+    backdrop-filter: blur(8px); /* Increased blur */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.main-header .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    letter-spacing: 3px;
+    text-shadow: 0 0 5px rgba(197, 163, 82, 0.7); /* Metallic logo shine */
+}
+
+.main-header nav a {
+    color: var(--color-silver);
+    text-decoration: none;
+    margin: 0 1.5rem;
+    transition: color var(--transition-speed);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.main-header nav a:hover {
+    color: var(--color-gold);
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--color-silver);
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    transition: color var(--transition-speed);
+}
+
+.icon-btn:hover {
+    color: var(--color-gold);
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-visual-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.bg-video { /* Simulating the 3D animation look */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.65); /* Slightly darker for text visibility */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    max-width: 800px;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+    font-weight: 300;
+}
+
+/* --- Featured Collections --- */
+.featured-collections {
+    padding: 6rem 5%;
+    text-align: center;
+}
+
+.featured-collections h2 {
+    margin-bottom: 4rem;
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.collection-card {
+    /* EDIT: Used variable for surface color */
+    background-color: var(--color-dark-surface); 
+    padding: 3rem 1.5rem;
+    /* EDIT: Higher contrast border */
+    border: 1px solid #333333; 
+    transition: transform var(--transition-speed) ease-out, box-shadow var(--transition-speed);
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+}
+
+.collection-card:hover {
+    transform: translateY(-10px);
+    /* EDIT: Added subtle inner shadow for depth */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7), 0 0 15px var(--color-gold), inset 0 0 10px rgba(197, 163, 82, 0.3); 
+}
+
+.collection-card h3 {
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+}
+
+.collection-card p {
+    color: var(--color-silver);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.collection-card a {
+    color: var(--color-gold);
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* --- Motion Gallery (Basic Scroll Effect) --- */
+.motion-gallery {
+    padding: 4rem 0;
+    overflow: hidden;
+}
+
+.motion-gallery h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.scrolling-track {
+    display: flex;
+    animation: scroll-left 40s linear infinite; /* Basic scrolling animation */
+}
+
+.scrolling-track img {
+    height: 400px; /* Example size */
+    width: auto;
+    object-fit: cover;
+    margin-right: 1.5rem;
+    /* EDIT: Increased contrast for metallic effect */
+    filter: brightness(1) contrast(1.1) grayscale(0.2); 
+    transition: filter 0.5s;
+}
+
+.scrolling-track img:hover {
+    filter: brightness(1.1) contrast(1.2);
+}
+
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Half the track width for seamless loop */
+}
+
+/* --- AI Teaser --- */
+.ai-teaser {
+    background-color: var(--color-dark-surface); /* Used variable */
+    padding: 6rem 5%;
+    text-align: center;
+}
+
+.ai-teaser .teaser-content {
+    border: 1px solid var(--color-gold);
+    padding: 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+    /* EDIT: Added subtle glow on the boundary */
+    box-shadow: 0 0 15px rgba(197, 163, 82, 0.3);
+}
+
+/* --- Testimonials --- */
+.testimonials {
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.testimonial-slider {
+    max-width: 700px;
+    margin: 2rem auto;
+}
+
+.testimonial-slider p {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--color-white);
+}
+
+.testimonial-slider .source {
+    display: block;
+    margin-top: 1rem;
+    color: var(--color-gold);
+    font-weight: 600;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #000000;
+    padding: 3rem 5%;
+    text-align: center;
+    border-top: 1px solid #222222; /* Slightly darker border */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.footer-content .logo {
+    font-size: 1.2rem;
+    color: var(--color-gold);
+    letter-spacing: 3px;
+}
+
+.footer-content a {
+    color: var(--color-silver);
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color var(--transition-speed);
+}
+
+.footer-content a:hover {
+    color: var(--color-gold);
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: #444;
+}
+
+/* --- Media Queries for Mobile Optimization --- */
+@media (max-width: 768px) {
+    .main-header nav {
+        display: none; /* Hide nav links on small screens */
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .collection-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-content {
+        flex-direction: column;
+    }
+    .footer-content .logo, .quick-links, .social-links {
+        margin-bottom: 1rem;
+    }
+}
